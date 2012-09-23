@@ -57,9 +57,9 @@ class Dh_ItemPosition_Block_Page_Html_Head extends Mage_Page_Block_Html_Head
     public function setBefore($beforeKey, $afterKey)
     {
         $items = $this->_data['items'];
-        
+
         if (array_key_exists($beforeKey, $items) && array_key_exists($afterKey, $items)) {
-           
+
             $keys = array_keys($items);
             
             /*

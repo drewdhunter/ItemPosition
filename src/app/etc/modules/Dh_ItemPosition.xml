@@ -2,9 +2,9 @@
 
 <config>
     <modules>
-        <Line_ItemPosition>
+        <Dh_ItemPosition>
             <active>true</active>
             <codePool>community</codePool>
-        </Line_ItemPosition>
+        </Dh_ItemPosition>
     </modules>
 </config>
