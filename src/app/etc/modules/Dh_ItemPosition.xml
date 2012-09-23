@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Line_ItemPosition>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Line_ItemPosition>
+    </modules>
+</config>
