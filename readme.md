@@ -43,3 +43,8 @@ or
 
 ### Support or Contact
 Direct any feedback to @ddh__ / drewdhunter@gmail.com
+
+
+### Changelog
+1.0.0 Initial commit
+1.1.0 Simplified Dh_ItemPosition_Block_Page_Html_Head::before.  Additionally, this now ensures that the before item will always come directly before the after item

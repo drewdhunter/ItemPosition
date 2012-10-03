@@ -46,6 +46,8 @@ class Dh_ItemPosition_Block_Page_Html_Head extends Mage_Page_Block_Html_Head
     /**
      * Ensures that the beforeKey element will always be positioned before
      * the afterKey element.
+     * 
+     * This is going to work best from local.xml
      *
      * If beforeKey already is before afterKey then nothing is moved.  If
      * beforeKey is after afterKey then it will be moved to directly before it.
@@ -60,31 +62,18 @@ class Dh_ItemPosition_Block_Page_Html_Head extends Mage_Page_Block_Html_Head
 
         if (array_key_exists($beforeKey, $items) && array_key_exists($afterKey, $items)) {
 
-            $keys = array_keys($items);
-            
-            /*
-             * If before item already preceeds after item then no 
-             * point in continuing...
-             */
+            $keys = array_keys($items); 
+
             $beforePos = array_search($beforeKey, $keys);
             $afterPos = array_search($afterKey, $keys);
-            if ($beforePos < $afterPos) {
-                return $this;
-            }
             
-            /**
-             * Sort array with new positioning 
-             */
-            $sorted = array();
-            foreach($items as $k => $v) {
-                if ($k == $afterKey) {
-                    unset($items[$beforeKey], $items[$afterKey]);
-                    $sorted[$beforeKey] = $this->_data['items'][$beforeKey];
-                    $sorted[$afterKey] = $this->_data['items'][$afterKey];
-                }
-                $sorted[$k] = $v;
-            }
-            $this->_data['items'] = $sorted;
+            $afterItem = array_splice($items, $afterPos, 1, true);
+            $sortedItems = array_slice($items, $beforePos, 1, true)
+                + $afterItem
+                + array_slice($items, $beforePos+1, null, true)
+            ;
+
+            $this->_data['items'] = $sortedItems;
         }
         return $this;
     }
