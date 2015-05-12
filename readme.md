@@ -24,7 +24,7 @@ Three new methods have been added to Mage_Page_Block_Html_Head:
 
 or
      <reference name="head">
-            <action method="setFirst">
+            <action method="setFirstItem">
                 <first>js/lib/jquery/jquery/jquery-1.8.2.min.js</first>
             </action>
      </reference>
@@ -33,7 +33,7 @@ or
 or
 
      <reference name="head">
-            <action method="setLast">
+            <action method="setLastItem">
                 <last>js/lib/jquery/depends-on-jquery.js</last>
             </action>
      </reference>
